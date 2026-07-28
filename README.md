@@ -1,2 +1,2 @@
-# Projeto-Semestre-4---Desenvolvimento-Web
-Projeto integrado de desenvolvimento web
+# Projeto Integrado (PI) - Desenvolvimento Web:
+Projeto integrado do quarto semestre envolvendo o desenvolvimento de aplicação web
