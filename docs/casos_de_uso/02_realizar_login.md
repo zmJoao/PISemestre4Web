@@ -9,7 +9,7 @@ Permite que usuários cadastrados acessem o sistema utilizando e-mail e senha.
 
 Como usuário do sistema  
 Quero realizar login com e-mail e senha  
-Para acessar o sistema de monitoramento de produção.
+Para acessar o sistema clínico.
 
 ---
 

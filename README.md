@@ -2,7 +2,7 @@
 Projeto integrado - Quarto Semestre - Modulo de Aplicação Web
 
 
-## Equipe
+## Equipe:
 
 - Augusto Barreto Gomes Alves RA: 2500011
 - Mateus Graçadio Coelho RA: 25000217
@@ -12,6 +12,7 @@ Projeto integrado - Quarto Semestre - Modulo de Aplicação Web
 - Augusto De Pauli Duarte RA: 25000087
 
 ## Sistema de Gerenciamento Clínico.
+
 ### Sobre o Projeto:
 No 4º Semestre, que envolve a criação de uma aplicação web, optamos por desenvolver um sistema de gerenciamento clínico, ou seja, um sistema que consegue gerenciar pacientes, agendar horários e exibir esses agendamentos de uma forma intuitiva para a recepção ou qualquer que seja que esteja no controle desse quesito.
 

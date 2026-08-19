@@ -1,15 +1,13 @@
 # Cadastrar Usuário
 
 ## Descrição
-Permite que novos colaboradores da empresa criem uma conta no aplicativo para acessar o sistema de monitoramento de produção.
+Permite que novos usuários criem contas para poderem acessar o sistema, as contas poderão ter diferentes níveis de privilégios.
 
 ---
 
 ## User Story
 
-Como colaborador da empresa  
-Quero criar uma conta no aplicativo  
-Para acessar o sistema de monitoramento da produção.
+Crio uma conta para obter o uso do sistema de gerenciamento clínico
 
 ---
 
