@@ -20,6 +20,9 @@ A equipe decidiu por desenvolver um website que fornece uma ferramenta para gere
 Ele fornecerá uma agenda interativa, onde o usuário pode facilmente ver e criar agendamentos.
 O usuário poderá facilmente adicionar novos usuários, junto de suas informações.
 
+#### Desenvolvimento: 
+Por ser um projeto Web, utilizamos de HTML, CSS e JavaScript para criar a base, interface, e backend do projeto respectivamente.
+
 
 
 ### Empresa Beneficiada:
