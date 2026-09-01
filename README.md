@@ -14,7 +14,16 @@ Projeto integrado - Quarto Semestre - Modulo de Aplicação Web
 ## Sistema de Gerenciamento Clínico.
 
 ### Sobre o Projeto:
-No 4º Semestre, que envolve a criação de uma aplicação web, optamos por desenvolver um sistema de gerenciamento clínico, ou seja, um sistema que consegue gerenciar pacientes, agendar horários e exibir esses agendamentos de uma forma intuitiva para a recepção ou qualquer que seja que esteja no controle desse quesito.
+
+#### Easy Clinic:
+A equipe decidiu por desenvolver um website que fornece uma ferramenta para gerenciar clínicas, ela envolve no registro e agendamento de pacientes.
+Ele fornecerá uma agenda interativa, onde o usuário pode facilmente ver e criar agendamentos.
+O usuário poderá facilmente adicionar novos usuários, junto de suas informações.
+
+#### Desenvolvimento: 
+Por ser um projeto Web, utilizamos de HTML, CSS e JavaScript para criar a base, interface, e backend do projeto respectivamente.
+
+
 
 ### Empresa Beneficiada:
 n/a (temporário)
