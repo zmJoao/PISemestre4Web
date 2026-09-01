@@ -7,6 +7,7 @@
     <title>EasyClinic - Cadastro</title>
 
     <link rel="stylesheet" href="../assets/css/cadastro.css">
+    <link rel="script" href="../assets/js/cadastro.js">
 </head>
 
 <body>
@@ -26,23 +27,32 @@
 
             <div class="formulario">
 
-                <h2>Criar Conta</h2>
+                <h2>Criar Acesso</h2>
 
-                <form>
+                <form method="post">
+                    <h3>Informações da Clínica</h3>
 
                     <div class="campo">
-                        <label>Nome Completo</label>
-                        <input type="text" id="nome">
+                        <label>Nome da Clínica</label>
+                        <input type="text" id="nomeClinica">
+                    </div>
+
+                    <div class="campo">
+                        <label>CNPJ</label>
+                        <input type="text" id="cnpj">
+                        
+                    </div>
+
+                    <h3>Usuário Master</h3>
+
+                    <div class="campo">
+                        <label>Usuário</label>
+                        <input type="text" id="usuario">
                     </div>
 
                     <div class="campo">
                         <label>E-mail</label>
                         <input type="email" id="email">
-                    </div>
-
-                    <div class="campo">
-                        <label>CPF</label>
-                        <input type="text" id="cpf">
                     </div>
 
                     <div class="campo">

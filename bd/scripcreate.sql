@@ -39,7 +39,7 @@ CREATE TABLE `clinica` (
 -- =====================================================
 
 CREATE TABLE `tag` (
-    `idtag` INT NOT NULL,
+    `idtag` INT NOT NULL auto_increment,
     `descricao` VARCHAR(45) NOT NULL,
     `clinica_cnpj` VARCHAR(14) NOT NULL,
 
@@ -59,7 +59,7 @@ CREATE TABLE `tag` (
 -- =====================================================
 
 CREATE TABLE `plano` (
-    `idplano` INT NOT NULL,
+    `idplano` INT NOT NULL auto_increment,
     `descricao` VARCHAR(45) NOT NULL,
     `aplicadesconto` TINYINT NOT NULL,
     `valordesconto` FLOAT NOT NULL,
@@ -82,7 +82,7 @@ CREATE TABLE `plano` (
 -- =====================================================
 
 CREATE TABLE `pacientes` (
-    `idpacientes` INT NOT NULL,
+    `idpacientes` INT NOT NULL auto_increment,
     `nome` VARCHAR(45) NOT NULL,
     `cpf` VARCHAR(45) NULL,
     `telefone` VARCHAR(45) NOT NULL,
@@ -122,7 +122,7 @@ CREATE TABLE `pacientes` (
 -- =====================================================
 
 CREATE TABLE `usuario` (
-    `idusuario` INT NOT NULL,
+    `idusuario` INT NOT NULL auto_increment,
     `usuario` VARCHAR(45) NOT NULL,
     `email` VARCHAR(45) NOT NULL,
     `senha` VARCHAR(45) NOT NULL,
@@ -144,7 +144,7 @@ CREATE TABLE `usuario` (
 -- =====================================================
 
 CREATE TABLE `doutor` (
-    `iddoutor` INT NOT NULL,
+    `iddoutor` INT NOT NULL auto_increment,
     `nome` VARCHAR(45) NOT NULL,
     `especialidade` VARCHAR(45) NOT NULL,
     `clinica_cnpj` VARCHAR(14) NOT NULL,
@@ -165,7 +165,7 @@ CREATE TABLE `doutor` (
 -- =====================================================
 
 CREATE TABLE `agenda` (
-    `idagenda` INT NOT NULL,
+    `idagenda` INT NOT NULL auto_increment,
     `datahora` DATETIME NOT NULL,
     `doutor_iddoutor` INT NOT NULL,
     `pacientes_idpacientes` INT NOT NULL,
@@ -207,3 +207,12 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- =====================================================
 
 SHOW TABLES;
+
+use easyclinic;
+
+insert into clinica values ('30976442000139', 'SAUDE E BEM-ESTAR MEDICINA INTEGRADA');
+
+select * from usuario;
+select * from clinica;
+
+drop database easyclinic;
