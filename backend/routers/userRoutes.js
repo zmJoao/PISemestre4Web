@@ -11,6 +11,9 @@ const {registerValidationRules, validate} = require('../helpers/userValidator')
 //register
 route.post('/register',registerValidationRules(), validate, UserController.register)
 
+//login
+route.post('/login', UserController.login);
+
 //listar todos
 route.get('/', UserController.listAll)
 
