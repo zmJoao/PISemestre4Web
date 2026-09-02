@@ -16,7 +16,7 @@ document.getElementById('btnCadastrar').addEventListener('click', async (event) 
     const API_URL = 'http://localhost:5000';
 
     try {
-        // 1. Cadastra a Clínica
+        // Cadastra a Clínica
         const resClinica = await fetch(`${API_URL}/clinicas/register`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -26,12 +26,12 @@ document.getElementById('btnCadastrar').addEventListener('click', async (event) 
         const dataClinica = await resClinica.json();
 
         if (!resClinica.ok) {
-            // Extrai a mensagem tratada do express-validator ou controller
+            // mensagem  do express-validator ou controller
             const msg = dataClinica.message || (dataClinica.errors && dataClinica.errors[0]?.msg) || JSON.stringify(dataClinica);
             throw new Error(`Erro na Clínica: ${msg}`);
         }
 
-        // 2. Cadastra o Usuário
+        // Cadastra o Usuário
         const resUser = await fetch(`${API_URL}/users/register`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -46,7 +46,7 @@ document.getElementById('btnCadastrar').addEventListener('click', async (event) 
         const dataUser = await resUser.json();
 
         if (!resUser.ok) {
-            // Extrai a mensagem tratada do express-validator ou controller
+            // mensagem do express-validator ou controller
             const msg = dataUser.message || (dataUser.errors && dataUser.errors[0]?.msg) || JSON.stringify(dataUser);
             throw new Error(`Erro no Usuário: ${msg}`);
         }

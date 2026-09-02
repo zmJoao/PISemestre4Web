@@ -125,7 +125,7 @@ CREATE TABLE `usuario` (
     `idusuario` INT NOT NULL auto_increment,
     `usuario` VARCHAR(45) NOT NULL,
     `email` VARCHAR(45) NOT NULL,
-    `senha` VARCHAR(45) NOT NULL,
+    `senha` VARCHAR(255) NOT NULL,
     `clinica_cnpj` VARCHAR(14) NOT NULL,
 
     PRIMARY KEY (`idusuario`),
