@@ -1,0 +1,42 @@
+//requere o express
+const express = require('express')
+//instacia do express
+const api = express()
+//require cors
+const cors = require('cors')
+//requerer a conexão
+const conn = require('./db/conn.js')
+//requerer os Models
+const User = require('./models/Users.js')
+const Clinica = require('./models/Clinica.js')
+const Tag = require('./models/Tag.js')
+const Plano = require('./models/Plano.js')
+const Paciente = require('./models/Paciente.js')
+const Doutor = require('./models/Doutor.js')
+const Agenda = require('./models/Agenda.js')
+//requer a rotas ros usuarios (user)
+const userRoutes = require('./routers/userRoutes.js')
+const clinicaRoutes = require('./routers/clinicaRoutes.js')
+const doutorRoutes = require('./routers/doutorRoutes.js')
+const pacienteRoutes = require('./routers/pacienteRoutes.js')
+const planoRoutes = require('./routers/planoRoutes.js')
+const tagRoutes = require('./routers/tagRoutes.js')
+
+//configurando JSON response
+api.use(express.json())
+
+//salve cors
+//api.use(cors({credentials: true, origin: 'http://localhost:5000'}))
+api.use(cors())
+
+api.use('/users',userRoutes)
+api.use('/clinicas', clinicaRoutes)
+api.use('/doutores', doutorRoutes)
+api.use('/pacientes', pacienteRoutes)
+api.use('/tag', tagRoutes)
+api.use('/plano', planoRoutes)
+
+//start api
+conn.sync()
+    .then(()=>{api.listen(5000)})
+    .catch(error=>{console.info(error)})
