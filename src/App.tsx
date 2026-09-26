@@ -1,10 +1,11 @@
 // --------------------
 import { useEffect, useState } from 'react';
 import type { FormEvent } from 'react';
-import{  Agenda } from './components/AgendaWidget';
+import{  Agenda } from './components/Agenda/AgendaWidget';
 import './index.css';
 import { Assets } from './components/AssetsClass';
 import { useAuth } from './context/AuthContext'
+import { Sidebar } from './components/Sidebar/Sidebar'
 
 // --------------------
 
@@ -23,6 +24,7 @@ type RecordItem = {
   idpacientes?: number
   iddoutor?: number
 }
+
 type SelectOption = { label: string; value: string }
 
 const API_URL = 'http://localhost:5000'
@@ -321,11 +323,9 @@ function EntityField({
 }
 
 function Dashboard({ onNavigate }: { onNavigate: (page: Page) => void }) {
-  const { user } = useAuth();
-
   return (
-    <Shell active="inicio" onNavigate={onNavigate}>
-      <h1 className="mb-7 text-3xl font-bold text-[#4f7161]">Bem-vindo, {user?.usuario}!</h1>
+    <Sidebar active="inicio" onNavigate={onNavigate}>
+      <h1 className="mb-7 text-3xl font-bold text-[#4f7161]">Início</h1>
       <div className="rounded-[10px] bg-white p-6 shadow-[0_2px_8px_rgba(0,0,0,0.1)]">
         <h3 className="mb-4 text-lg font-semibold text-[#4f7161]">Login realizado com sucesso</h3>
         <p className="mb-2">Esta é a tela inicial do sistema.</p>
@@ -339,7 +339,7 @@ function Dashboard({ onNavigate }: { onNavigate: (page: Page) => void }) {
           <Agenda/>
         </ul>
       </div>
-    </Shell>
+    </Sidebar>
   )
 }
 
@@ -373,7 +373,7 @@ function RecordsPage({
 
   // JSX permite renderização condicional usando expressões JavaScript.
   return (
-    <Shell active={kind} onNavigate={onNavigate}>
+    <Sidebar active={kind} onNavigate={onNavigate}>
       <div className="mb-6 flex items-center gap-4">
         <input
           className="min-w-0 flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm focus:border-[#4f7161] focus:outline-none focus:ring-2 focus:ring-[#4f7161]/20"
@@ -412,52 +412,10 @@ function RecordsPage({
           )}
         </ul>
       </div>
-    </Shell>
+    </Sidebar>
   )
 }
 
-function Shell({
-  active,
-  onNavigate,
-  children,
-}: {
-  active: Page
-  onNavigate: (page: Page) => void
-  children: React.ReactNode
-}) {
- 
-  return (
-    <div className="flex min-h-screen flex-col md:flex-row">
-      <aside className="w-full bg-[#4f7161] px-5 py-5 text-white md:min-h-screen md:w-[250px] md:shrink-0 md:px-5 md:py-8">
-        <h2 className="mb-5 text-2xl font-bold md:mb-10">EasyClinic</h2>
-        <nav>
-          <ul className="flex flex-wrap gap-x-5 gap-y-3 md:block">
-            <li
-              className={`cursor-pointer transition hover:opacity-80 md:mb-5 ${active === 'inicio' ? 'font-bold opacity-100' : ''}`}
-              onClick={() => onNavigate('inicio')}
-            >
-              Início
-            </li>
-            <li className="cursor-pointer transition hover:opacity-80 md:mb-5" onClick={() => onNavigate('inicio')}>Agendamentos</li>
-            <li
-              className={`cursor-pointer transition hover:opacity-80 md:mb-5 ${active === 'pacientes' ? 'font-bold opacity-100' : ''}`}
-              onClick={() => onNavigate('pacientes')}
-            >
-              Pacientes
-            </li>
-            <li
-              className={`cursor-pointer transition hover:opacity-80 ${active === 'profissionais' ? 'font-bold opacity-100' : ''}`}
-              onClick={() => onNavigate('profissionais')}
-            >
-              Profissionais
-            </li>
-          </ul>
-        </nav>
-      </aside>
-      <main className="min-w-0 flex-1 p-6 md:p-10">{children}</main>
-    </div>
-  )
-}
 
 type EntityFieldConfig =
   | {
@@ -611,7 +569,7 @@ function EntityForm({
   }
 
   return (
-    <Shell active={back} onNavigate={onNavigate}>
+    <Sidebar active={back} onNavigate={onNavigate}>
       <div className="mx-auto max-w-2xl rounded-[10px] bg-white p-6 shadow-[0_2px_8px_rgba(0,0,0,0.1)] md:p-8">
         <h1 className="mb-7 text-2xl font-bold text-[#4f7161]">{title}</h1>
         {notice && <p className="notice">{notice}</p>}
@@ -636,7 +594,7 @@ function EntityForm({
           </p>
         </div>
       </div>
-    </Shell>
+    </Sidebar>
   )
 }
 
